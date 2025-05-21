@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="copyright" content="MACode ID, https://macodeid.com/" />
+    <title>DesiQnA - Interview Experiences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4361ee",
+              secondary: "#2d3748",
+              accent: "#f9a826",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .btn-primary {
+          @apply bg-primary text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300;
+        }
+        .card {
+          @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+        }
+        .back-to-top {
+          @apply hidden fixed bottom-6 right-6 z-50 bg-primary text-white rounded-full p-3 shadow-lg cursor-pointer hover:bg-blue-700 transition duration-300;
+        }
+        .back-to-top.visible {
+          @apply block;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <!-- Back to top button -->
+    <div class="back-to-top">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white shadow-sm">
+      <nav class="container mx-auto px-4 md:px-6 py-4">
+        <div class="flex flex-wrap items-center justify-between">
+          <a href="https://www.desiqna.in" class="flex items-center">
+            <span class="text-2xl font-bold"
+              >Desi<span class="text-primary">QnA.</span></span
+            >
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="menu-toggle"
+            class="block md:hidden p-2 rounded-lg hover:bg-gray-100"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                id="menu-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Navigation Links -->
+          <div
+            id="menu"
+            class="hidden w-full md:flex md:w-auto md:items-center"
+          >
+            <ul
+              class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium"
+            >
+              <li>
+                <a
+                  href="index.html"
+                  class="block py-2 px-3 text-primary md:p-0 border-b border-gray-100 md:border-0"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.desiqna.in/online-assessments"
+                  class="block py-2 px-3 text-gray-700 hover:text-primary md:p-0 border-b border-gray-100 md:border-0"
+                  >Online Assessment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.desiqna.in/4963/roadmap-for-maang-data-structures-algorithms-kumar-desi-2022"
+                  class="block py-2 px-3 text-gray-700 hover:text-primary md:p-0 border-b border-gray-100 md:border-0"
+                  >DSA Roadmap</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.desiqna.in/5151/roadmap-clearing-product-companies-coding-online-assessments"
+                  class="block py-2 px-3 text-gray-700 hover:text-primary md:p-0 border-b border-gray-100 md:border-0"
+                  >OA Roadmap</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.desiqna.in/4570/internship-opportunities-freshers-students-computer-science"
+                  class="block py-2 px-3 text-gray-700 hover:text-primary md:p-0 border-b border-gray-100 md:border-0"
+                  >Job Links</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://telegram.im/@chillzxa"
+                  class="block py-2 px-3 text-gray-700 hover:text-primary md:p-0"
+                  >Coding Community</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 md:px-6 py-12 md:py-24">
+      <div class="flex flex-col-reverse md:flex-row items-center">
+        <div class="md:w-1/2 mt-10 md:mt-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 text-secondary">
+            Welcome To DesiQnA!!!
+          </h1>
+          <p class="text-xl text-gray-600 mb-8">
+            The most requested and on demand list of Top Company Interview
+            Experience's
+          </p>
+          <a href="#ProductBased-OA-card-list" class="btn-primary inline-block"
+            >Explore Companies</a
+          >
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="../assets/img/banner_image_1.svg"
+            alt="DesiQnA Banner"
+            class="max-w-full h-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Based Companies Section -->
+    <section id="ProductBased-OA-card-list" class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-secondary mb-4">
+            List of Interview Experiences for Top Product Based Companies
+          </h2>
+          <div class="h-1 w-20 bg-primary rounded"></div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- Google Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/googlelogo.svg"
+                  alt="GOOGLE Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">GOOGLE</h5>
+              <a
+                href="https://www.desiqna.in/tag/google_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Amazon Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/amazonlogo.svg"
+                  alt="AMAZON Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">AMAZON</h5>
+              <a
+                href="https://www.desiqna.in/tag/amazon_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Microsoft Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/microsoftlogo.svg"
+                  alt="MICROSOFT Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                MICROSOFT
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/microsoft_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Walmart Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/walmart-2.svg"
+                  alt="WALMART Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">WALMART</h5>
+              <a
+                href="https://www.desiqna.in/tag/walmart_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Goldman Sachs Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/goldmansachs-icon.svg"
+                  alt="GOLDMAN SACHS Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                GOLDMAN SACHS
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/goldman-sachs_interview_experience"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Apple Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/apple-icon.svg"
+                  alt="APPLE Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">APPLE</h5>
+              <a
+                href="https://www.desiqna.in/tag/apple_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- De Shaw Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/deshaw_adobe_express.svg"
+                  alt="DE SHAW Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">DE SHAW</h5>
+              <a
+                href="https://www.desiqna.in/tag/de-shaw_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Uber Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/uber.svg"
+                  alt="UBER Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">UBER</h5>
+              <a
+                href="https://www.desiqna.in/tag/uber_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Intuit Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/intuit-logo-1.svg"
+                  alt="INTUIT Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">INTUIT</h5>
+              <a
+                href="https://www.desiqna.in/tag/intuit_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Atlassian Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/atlassianlogo.svg"
+                  alt="ATLASSIAN Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                ATLASSIAN
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/atlassian_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Cisco Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/cisco-2.svg"
+                  alt="CISCO Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">CISCO</h5>
+              <a
+                href="https://www.desiqna.in/tag/cisco_interview_experiences_"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- PhonePe Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/phonepe-logo.svg"
+                  alt="PHONEPE Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                PHONE PE
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/phonepe_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Disney Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/disney.svg"
+                  alt="DISNEY Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                DISNEY + HOTSTAR
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/disney_hotstar_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Flipkart Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/flipkart.svg"
+                  alt="FLIPKART Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                FLIPKART
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/flipkart_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Codenation Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/codenation_adobe_express.svg"
+                  alt="CODENATION Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                CODENATION
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/codenation_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Based Companies Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-secondary mb-4">
+            List of Interview Experiences for Service Based Companies
+          </h2>
+          <div class="h-1 w-20 bg-primary rounded"></div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- TCS Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/tcs-logo.svg"
+                  alt="TCS Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">TCS</h5>
+              <a
+                href="https://www.desiqna.in/tag/tcs_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Accenture Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/accenture-icon.svg"
+                  alt="ACCENTURE Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                ACCENTURE
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/accenture_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- LTI Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/lti-icon.svg"
+                  alt="LTI Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">LTI</h5>
+              <a
+                href="https://www.desiqna.in/tag/lti_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Infosys Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/infosys-technologies-logo.svg"
+                  alt="INFOSYS Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">INFOSYS</h5>
+              <a
+                href="https://www.desiqna.in/tag/infosys_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Cognizant Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/cognizant-icon.svg"
+                  alt="COGNIZANT Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                COGNIZANT
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/cognizant_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Capgemini Card -->
+          <div class="card">
+            <div class="p-6 flex flex-col items-center">
+              <div class="w-full h-24 flex items-center justify-center mb-4">
+                <img
+                  src="../assets/img/companies/capgemini-logo-2017.svg"
+                  alt="CAPGEMINI Logo"
+                  class="h-12"
+                />
+              </div>
+              <h5 class="text-xl font-semibold text-secondary mb-4">
+                CAPGEMINI
+              </h5>
+              <a
+                href="https://www.desiqna.in/tag/capgemini_interview_experiences"
+                class="btn-primary w-full text-center"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- More Companies Section -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4 md:px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold text-secondary mb-6">
+            Didn't find your desired company?
+          </h2>
+          <p class="text-xl text-gray-600 mb-8">
+            Look for it in our comprehensive
+            <a
+              href="https://www.desiqna.in/interview-experience"
+              class="text-primary font-semibold hover:underline"
+              >List</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-800 text-white pt-16 pb-8"
+      style="
+        background-image: url(../assets/img/world_pattern.svg);
+        background-blend-mode: overlay;
+      "
+    >
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h3 class="text-3xl font-bold mb-4">
+              Desi<span class="text-primary">QnA.</span>
+            </h3>
+            <p class="text-gray-300 mb-6">
+              This webpage ownership is under Desi QnA. You can connect with
+              Desi QnA team on below handles
+            </p>
+
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="bg-gray-700 hover:bg-primary p-2 rounded-full transition duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-700 hover:bg-primary p-2 rounded-full transition duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center pt-8 border-t border-gray-700">
+          <p class="text-gray-400">
+            Copyright &copy; 2025 for DesiQnA. . Originally designed by
+            <a
+              href="https://www.linkedin.com/in/bhargab-sarmah-077563152/"
+              target="_blank"
+              class="text-primary hover:underline"
+              >CodingDitto</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Back to top button
+      const backToTopButton = document.querySelector(".back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add("visible");
+        } else {
+          backToTopButton.classList.remove("visible");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+  <path
+    fill-rule="evenodd"
+    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+    clip-rule="evenodd"
+  />
+</svg>
